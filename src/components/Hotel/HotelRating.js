@@ -8,7 +8,7 @@ const FilterSidebar = ({ isOpen, setIsOpen }) => {
   return (
     <div>
       <div
-        className={`fixed top-0 left-0 w-2/3 h-full bg-white shadow-lg transform ${isOpen ? 'translate-x-0' : '-translate-x-full'
+        className={`fixed top-0 left-0 w-[60%] h-full bg-white shadow-lg transform ${isOpen ? 'translate-x-0' : '-translate-x-full'
           } transition-transform duration-300 ease-in-out z-40 md:static md:translate-x-0 md:block`}
       >
         <div className="h-full overflow-y-auto p-4">
