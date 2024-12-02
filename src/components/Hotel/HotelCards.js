@@ -5,9 +5,10 @@ import { FiWifi, FiTv, FiCoffee } from 'react-icons/fi';
 import { IoIosSnow } from "react-icons/io";
 import { BiFridge } from "react-icons/bi";
 import { Link } from 'react-router-dom';
+import { FiFilter, FiX } from 'react-icons/fi';
 
 
-function HotelCards() {
+function HotelCards({ isOpen, setIsOpen }) {
   const hotels = [
     {
       id: 1,
@@ -78,11 +79,20 @@ function HotelCards() {
   ];
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const toggleDropdown = () => setIsDropdownOpen(!isDropdownOpen);
-  
+
+  const toggleFilter = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <div className=''>
+    <div>
       <div className="flex justify-between py-6">
-        <h2 className="text-[8px] sm:text-xl font-semibold text-black ">32 Hotel available</h2>
+        <div className='flex items-center gap-1'>
+          <button onClick={toggleFilter}>
+            {isOpen ? <FiX size={18} /> : <FiFilter size={18} />}
+            </button>
+          <h2 className="text-[10px] sm:text-xl font-semibold text-black">32 Hotel available</h2>
+          </div>
         <div className="relative flex gap-2 text-gray-900 text-[8px] md:text-sm">
           <span className="font-semibold">Sort by:</span>
           <button
